@@ -4,7 +4,7 @@ root=Tk()
 root.geometry("1920x1080")
 root.wm_attributes('-fullscreen', 'True')
 
-img=PhotoImage(file=r"C:\Users\Anmol\Documents\My Vasiyat\python\Meet Project\Assets\login_bg.png")
+img=PhotoImage(file="./Assets/login_bg.png")
 Label(root,image=img).place(x=0,y=0)
 
 Label(root,text="Sign In",font=("Flourissha",60),bg="white").place(x=700,y=110)
