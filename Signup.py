@@ -11,6 +11,7 @@ def login():
     rg_btn.place(x=1282,y=87,width=130,height=40)
     lg_btn.config(fg="white",bg="#fbc79b",activebackground="#fbc79b",activeforeground="white")
     lg_btn.place(x=1148,y=90,width=115,height=35)
+    g1.config(text="Login to El Amour")
 
 def signup():
     show_frame(signup_frame)
@@ -19,6 +20,7 @@ def signup():
     rg_btn.place(x=1290,y=90,width=115,height=35)
     lg_btn.config(fg="black",bg="white",activebackground="white",activeforeground="black")
     lg_btn.place(x=1143,y=87,width=123,height=41)
+    g1.config(text="Register to El Amour")
 
 def show_frame(frame):
     frame.tkraise()
@@ -57,7 +59,8 @@ rg_btn=Button(root,text="Register",bd=0,font=("Arial",14),bg="#fbc79b",fg="white
        ,activebackground="#fbc79b",activeforeground="white",command=signup)
 rg_btn.place(x=1290,y=90,width=115,height=35)
 
-Label(root,text="Register to El Amour",font=("carlytte demo",46,"bold"),bg="#f8f8f8").place(x=150,y=190)
+g1=Label(root,text="Register to El Amour",font=("carlytte demo",46,"bold"),bg="#f8f8f8")
+g1.place(x=150,y=190)
 
 Label(root,text="Join to El Amour you will get the latest recommendations on the",font=("abadi",9),bg="#f8f8f8",fg="grey").place(x=155,y=280)
 Label(root,text="services given by the hotel.",font=("abadi",9),bg="#f8f8f8",fg="grey").place(x=155,y=300)

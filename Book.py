@@ -1,10 +1,21 @@
 from tkinter import *
 from tkinter import ttk
 from tkcalendar import *
+import os
 
 root=Tk()
 root.geometry("1920x1080")
 root.wm_attributes('-fullscreen', 'True')
+
+def open_main():
+    root.withdraw()
+    os.system("main.py")
+    root.destroy()
+
+def open_dashboard():
+    root.withdraw()
+    os.system("dashboard.py")
+    root.destroy()
 
 img=PhotoImage(file="./Assets/book_bg.png")
 Label(root,image=img).place(x=0,y=0)
@@ -22,11 +33,11 @@ help=Button(root,text="Need Help?",font=("Arial",11,"underline"),bg="white",fg="
 help.place(x=1150,y=565)
 
 home=Button(root,text="Home",font=("Arial",15),bg="white",fg="black",bd=0,activebackground="#fb4545"
-       ,activeforeground="white",cursor="hand2")
+       ,activeforeground="white",cursor="hand2",command=open_main)
 home.place(x=836,y=20,height=57,width=141)
 
 browse=Button(root,text="Browse",font=("Arial",15),bg="white",fg="black",bd=0,activebackground="#fb4545"
-       ,activeforeground="white",cursor="hand2")
+       ,activeforeground="white",cursor="hand2",command=open_dashboard)
 browse.place(x=1006,y=20,height=57,width=141)
 
 reviews=Button(root,text="Reviews",font=("Arial",15),bg="white",fg="black",bd=0,activebackground="#fb4545"

@@ -6,16 +6,19 @@ root.geometry("1920x1080")
 root.wm_attributes('-fullscreen', 'True')
 
 def open_signup():
-    filename="signup.py"
-    os.system(filename)
+    root.withdraw()
+    os.system("signup.py")
+    root.destroy()
 
 def open_bk():
-    filename="book.py"
-    os.system(filename)
+    root.withdraw()
+    os.system("book.py")
+    root.destroy()
 
 def open_login():
-    filename="login.py"
-    os.system(filename)
+    root.withdraw()
+    os.system("login.py")
+    root.destroy()
 
 img=PhotoImage(file="./Assets/Main_bg.png")
 Label(root,image=img).place(x=0,y=0)

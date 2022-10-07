@@ -147,8 +147,9 @@ def d_frame():
     size.place(x=552,y=210)
 
 def exit():
-    messagebox.askokcancel("Exit","Are you sure want to exit")
-    root.destroy()
+    sure=messagebox.askokcancel("Exit","Are you sure want to exit")
+    if sure == True:
+        root.destroy()
 
 def first_click(*args):
     l1.delete(0, 'end')
@@ -229,6 +230,19 @@ def out_leave(*args):
     else:
         pass
     frame2.focus()
+
+def signin_hover(e):
+    signin_btn["bg"]="#a4def1"
+    signin_btn["fg"]='blue'
+
+def signin_hover_leave(e):
+    signin_btn["bg"]="#a4def1"
+    signin_btn["fg"]='grey'
+
+def open_signin():
+    root.withdraw()
+    os.system("login.py")
+    root.destroy()
     
 Button(root,text="Home",fg="white",bg="#c2c2c2",font=("Crescendo",22,"bold"),bd=0
        ,activebackground="#c2c2c2",activeforeground="White",command=home_frame).place(x=725,y=25,width=120,height=45)
@@ -381,142 +395,199 @@ head.place(x=530,y=170,width=150)
 size=Label(frame3,text="32cm/48cm",fg="grey",bg="white",font=("Bahnschrift Light", 12))
 size.place(x=560,y=210)
 
+after_order_frame=Frame(frame3,relief=GROOVE,bg="white")
+
+def after_order():
+    after_order_frame.place(x=0,y=0,width=1210,height=653)
+    pizza_frame.place_forget()
+
+after_order_img=PhotoImage(file="./Assets/after_order_bg.png")
+Label(after_order_frame,image=after_order_img,relief=FLAT,bg="white").place(x=0,y=0)
+
 img5=PhotoImage(file="./Assets/pizza_frame.png")
 Label(pizza_frame,image=img5,relief=FLAT,bg="white").place(x=0,y=0)
 
 img6=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(pizza_frame,image=img6,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(pizza_frame,image=img6,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=444,y=50,height=32,width=32)
 
 img7=PhotoImage(file="./Assets/arrow.png")
-arr_btn1=Button(pizza_frame,image=img7,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn1=Button(pizza_frame,image=img7,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn1.place(x=444,y=181,height=32,width=32)
 
 img8=PhotoImage(file="./Assets/arrow.png")
-arr_btn2=Button(pizza_frame,image=img8,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn2=Button(pizza_frame,image=img8,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn2.place(x=444,y=309,height=32,width=32)
 
 img9=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(pizza_frame,image=img9,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(pizza_frame,image=img9,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=46,height=32,width=32)
 
 img10=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(pizza_frame,image=img10,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(pizza_frame,image=img10,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=181,height=32,width=32)
 
 img11=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(pizza_frame,image=img11,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(pizza_frame,image=img11,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=309,height=32,width=32)
 
 img12=PhotoImage(file="./Assets/burger_frame.png")
 Label(burger_frame,image=img12,relief=FLAT,bg="white").place(x=0,y=0)
 
 img13=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(burger_frame,image=img13,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(burger_frame,image=img13,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=444,y=50,height=32,width=32)
 
 img14=PhotoImage(file="./Assets/arrow.png")
-arr_btn1=Button(burger_frame,image=img14,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn1=Button(burger_frame,image=img14,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn1.place(x=444,y=181,height=32,width=32)
 
 img15=PhotoImage(file="./Assets/arrow.png")
-arr_btn2=Button(burger_frame,image=img15,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn2=Button(burger_frame,image=img15,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn2.place(x=444,y=309,height=32,width=32)
 
 img16=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(burger_frame,image=img16,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(burger_frame,image=img16,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=46,height=32,width=32)
 
 img17=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(burger_frame,image=img17,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(burger_frame,image=img17,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=181,height=32,width=32)
 
 img18=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(burger_frame,image=img18,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(burger_frame,image=img18,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=309,height=32,width=32)
 
 img19=PhotoImage(file="./Assets/drinks_frame.png")
 Label(drinks_frame,image=img19,relief=FLAT,bg="white").place(x=0,y=0)
 
 img20=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(drinks_frame,image=img20,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(drinks_frame,image=img20,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=444,y=50,height=32,width=32)
 
 img21=PhotoImage(file="./Assets/arrow.png")
-arr_btn1=Button(drinks_frame,image=img21,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn1=Button(drinks_frame,image=img21,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn1.place(x=444,y=181,height=32,width=32)
 
 img22=PhotoImage(file="./Assets/arrow.png")
-arr_btn2=Button(drinks_frame,image=img22,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn2=Button(drinks_frame,image=img22,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn2.place(x=444,y=309,height=32,width=32)
 
 img23=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(drinks_frame,image=img23,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(drinks_frame,image=img23,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=46,height=32,width=32)
 
 img24=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(drinks_frame,image=img24,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(drinks_frame,image=img24,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=181,height=32,width=32)
 
 img25=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(drinks_frame,image=img25,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(drinks_frame,image=img25,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=309,height=32,width=32)
 
 img26=PhotoImage(file="./Assets/snacks_frame.png")
 Label(snacks_frame,image=img26,relief=FLAT,bg="white").place(x=0,y=0)
 
 img27=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(snacks_frame,image=img27,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(snacks_frame,image=img27,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=444,y=50,height=32,width=32)
 
 img28=PhotoImage(file="./Assets/arrow.png")
-arr_btn1=Button(snacks_frame,image=img28,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn1=Button(snacks_frame,image=img28,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn1.place(x=444,y=181,height=32,width=32)
 
 img29=PhotoImage(file="./Assets/arrow.png")
-arr_btn2=Button(snacks_frame,image=img29,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn2=Button(snacks_frame,image=img29,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn2.place(x=444,y=309,height=32,width=32)
 
 img30=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(snacks_frame,image=img30,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(snacks_frame,image=img30,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=46,height=32,width=32)
 
 img31=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(snacks_frame,image=img31,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(snacks_frame,image=img31,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=181,height=32,width=32)
 
 img32=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(snacks_frame,image=img32,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(snacks_frame,image=img32,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=309,height=32,width=32)
 
 img33=PhotoImage(file="./Assets/salad_frame.png")
 Label(salad_frame,image=img33,relief=FLAT,bg="white").place(x=0,y=0)
 
 img34=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(salad_frame,image=img34,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(salad_frame,image=img34,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=444,y=50,height=32,width=32)
 
 img35=PhotoImage(file="./Assets/arrow.png")
-arr_btn1=Button(salad_frame,image=img35,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn1=Button(salad_frame,image=img35,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn1.place(x=444,y=181,height=32,width=32)
 
 img36=PhotoImage(file="./Assets/arrow.png")
-arr_btn2=Button(salad_frame,image=img36,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn2=Button(salad_frame,image=img36,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn2.place(x=444,y=309,height=32,width=32)
 
 img37=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(salad_frame,image=img37,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(salad_frame,image=img37,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=46,height=32,width=32)
 
 img38=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(salad_frame,image=img38,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(salad_frame,image=img38,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=181,height=32,width=32)
 
 img39=PhotoImage(file="./Assets/arrow.png")
-arr_btn=Button(salad_frame,image=img39,bg="#6edefa",bd=0,activebackground="#6edefa")
+arr_btn=Button(salad_frame,image=img39,bg="#6edefa",bd=0,activebackground="#6edefa",command=after_order)
 arr_btn.place(x=899,y=309,height=32,width=32)
 
-show_frame(frame1)
+img40=PhotoImage(file="./Assets/frame4.png")
+Label(frame4,image=img40,relief=FLAT,bg="white").place(x=0,y=0)
+
+name=Label(frame4,text="Hello, Cody!",font="Helvetica 18",bg="#a4def1",fg="White")
+name.place(x=30,y=30)
+Label(frame4,text="Not you?",font="Abadi 11",bg="#a4def1",fg="#737373").place(x=30,y=60)
+signin_btn=Button(frame4,text="Sign in as a different user.",font="Abadi 11",bd=0,cursor="hand2",
+              bg="#a4def1",fg="#737373",activebackground="#a4def1",activeforeground="blue",command=open_signin)
+signin_btn.place(x=90,y=60)
+signin_btn.bind("<Enter>",signin_hover)
+signin_btn.bind("<Leave>",signin_hover_leave)
+
+sw_win_frame=Frame(frame4,relief=GROOVE,bg="white")
+sw_win_frame.place(x=30,y=120)
+
+style = ttk.Style()
+style.configure('TButton', font=('Helvetica', 11),background="#e6e6e6", padding=10, relief="flat")
+
+first_btn=ttk.Button(sw_win_frame,text="Front Desk :",cursor="hand2")
+first_btn.grid(row=0,column=0)
+second_btn=ttk.Button(sw_win_frame,text="Room Check :",cursor="hand2")
+second_btn.grid(row=0,column=1)
+third_btn=ttk.Button(sw_win_frame,text="Reservations :",cursor="hand2")
+third_btn.grid(row=0,column=2)
+fourth_btn=ttk.Button(sw_win_frame,text="Housekeeping :",cursor="hand2")
+fourth_btn.grid(row=0,column=3)
+
+arr_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+arr_frame.place(x=20,y=200,width=230,height=180)
+
+in_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+in_frame.place(x=290,y=200,width=230,height=180)
+
+dp_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+dp_frame.place(x=560,y=200,width=400,height=180)
+
+vip_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+vip_frame.place(x=1000,y=200,width=200,height=180)
+
+new_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+new_frame.place(x=20,y=430,width=500,height=180)
+
+wth_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+wth_frame.place(x=560,y=430,width=200,height=180)
+
+past_frame=Frame(frame4,relief=GROOVE,bg="white",highlightbackground="#b3b3b3",highlightthickness=1)
+past_frame.place(x=790,y=430,width=410,height=180)
+
+show_frame(frame3)
 show_order_frame(pizza_frame)
 
 root.mainloop()
